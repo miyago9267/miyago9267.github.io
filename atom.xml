@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Miyago&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://miyago9267.github.io/"/>
+  <updated>2020-04-16T04:54:03.091Z</updated>
+  <id>http://miyago9267.github.io/</id>
+  
+  <author>
+    <name>Miyago</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>First article</title>
+    <link href="http://miyago9267.github.io/2020/04/16/First-article/"/>
+    <id>http://miyago9267.github.io/2020/04/16/First-article/</id>
+    <published>2020-04-16T04:52:44.000Z</published>
+    <updated>2020-04-16T04:54:03.091Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="First-post"><a href="#First-post" class="headerlink" title="First post"></a>First post</h1><p>這是我Blog的第一篇文章<br>測試一下能不能發文<br>你會看到文章代表你將要被我的廢文沖走了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;First-post&quot;&gt;&lt;a href=&quot;#First-post&quot; class=&quot;headerlink&quot; title=&quot;First post&quot;&gt;&lt;/a&gt;First post&lt;/h1&gt;&lt;p&gt;這是我Blog的第一篇文章&lt;br&gt;測試一下能不能發文&lt;br&gt;你會看到文章代表
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
