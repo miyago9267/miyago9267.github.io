@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>[TEST] First post</title>
-    <url>/2020/04/16/First-article/</url>
-    <content><![CDATA[<a id="more"></a>
-
-<p>測試一下能不能發文<br>你能看到文章代表你準備要被我的廢文沖走了</p>
-]]></content>
-  </entry>
-  <entry>
     <title>[Diary]20200416</title>
     <url>/2020/04/16/Diary-20200416/</url>
     <content><![CDATA[<p>今天是第一天寫札記<br>就隨便亂寫當是個水溫吧</p>
@@ -33,5 +25,13 @@
       <tags>
         <tag>Diary</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>[TEST] First post</title>
+    <url>/2020/04/16/First-article/</url>
+    <content><![CDATA[<a id="more"></a>
+
+<p>測試一下能不能發文<br>你能看到文章代表你準備要被我的廢文沖走了</p>
+]]></content>
   </entry>
 </search>
