@@ -28,7 +28,7 @@
 <meta property="og:description" content="今天校內舉辦學科能競的校內賽美其名是要初選去比區賽的人選但實際上題目水到根本沒有可以鑑別度可以選人如果這樣都能篩到人 那我只能說這年頭教育有點慘淡">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-05-29T15:01:03.000Z">
-<meta property="article:modified_time" content="2020-05-30T12:42:39.688Z">
+<meta property="article:modified_time" content="2020-06-02T14:46:35.646Z">
 <meta property="article:author" content="Miyago">
 <meta property="article:tag" content="WriteUp">
 <meta name="twitter:card" content="summary">
@@ -197,7 +197,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-30 20:42:39" itemprop="dateModified" datetime="2020-05-30T20:42:39+08:00">2020-05-30</time>
+                <time title="Modified: 2020-06-02 22:46:35" itemprop="dateModified" datetime="2020-06-02T22:46:35+08:00">2020-06-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,7 +232,7 @@
 <h3 id="P2"><a href="#P2" class="headerlink" title="P2"></a>P2</h3><p>有一種數稱之為Armstrong數，其定義為各位數字的三方相加之和等於其原本的數<br>E.g. 153=1<sup>3</sup>+3<sup>3</sup>+5<sup>3</sup>=1+27+125</p>
 <h4 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h4><p>==No input==</p>
 <h4 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h4><p>輸出所有三位數Armstrong數</p>
-<h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">#define IO i<span class="symbol">os:</span><span class="symbol">:sy</span>nc_with_stdio(<span class="number">0</span>);cin.tie(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> <span class="built_in">n</span>,tmp,<span class="built_in">sum</span>;</span><br><span class="line"></span><br><span class="line">signed main()&#123;</span><br><span class="line">    for (<span class="built_in">int</span> i=<span class="number">100</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">sum</span>=<span class="number">0</span>;<span class="built_in">n</span>=i;</span><br><span class="line">        <span class="built_in">sum</span>+=(<span class="built_in">n</span>%<span class="number">10</span>)*(<span class="built_in">n</span>%<span class="number">10</span>)*(<span class="built_in">n</span>%<span class="number">10</span>);<span class="built_in">n</span>/=<span class="number">10</span>;</span><br><span class="line">        <span class="built_in">sum</span>+=(<span class="built_in">n</span>%<span class="number">10</span>)*(<span class="built_in">n</span>%<span class="number">10</span>)*(<span class="built_in">n</span>%<span class="number">10</span>);<span class="built_in">n</span>/=<span class="number">10</span>;</span><br><span class="line">        <span class="built_in">sum</span>+=<span class="built_in">n</span>*<span class="built_in">n</span>*<span class="built_in">n</span>;</span><br><span class="line">        <span class="built_in">if</span> (<span class="built_in">sum</span>==i) cout&lt;&lt;i&lt;&lt;' ';</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IO ios::sync_with_stdio(0);cin.tie(0);</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,tmp,sum;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">100</span>;i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">        sum=<span class="number">0</span>;n=i;</span><br><span class="line">        sum+=(n%<span class="number">10</span>)*(n%<span class="number">10</span>)*(n%<span class="number">10</span>);n/=<span class="number">10</span>;</span><br><span class="line">        sum+=(n%<span class="number">10</span>)*(n%<span class="number">10</span>)*(n%<span class="number">10</span>);n/=<span class="number">10</span>;</span><br><span class="line">        sum+=n*n*n;</span><br><span class="line">        <span class="keyword">if</span> (sum==i) <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="P3"><a href="#P3" class="headerlink" title="P3"></a>P3</h3><p>見輸出入說明</p>
 <h4 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h4><p>每次單筆輸入<br>輸入只有一行<br>輸入n保證為數字串</p>
@@ -349,20 +349,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
