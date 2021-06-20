@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"miyago9267.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="久沒更新了 雖然這個Blog多半都在自己高潮不過久了還是會偶爾想要來講個屁話">
+  <meta name="description" content="很多人想學程式 但是卻不知道從何學起雖然我自己也沒有非常精深研究但我可以帶著新手一點一滴認識新玩意兒">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Diary]20200715">
-<meta property="og:url" content="http://miyago9267.github.io/2020/07/15/Diary-20200715/">
+<meta property="og:title" content="[Python]&lt;Fist lesson&gt;Python的環境建置">
+<meta property="og:url" content="http://miyago9267.github.io/2020/09/23/Python-Fist-lesson/">
 <meta property="og:site_name" content="Miyago&#39;s Blog">
-<meta property="og:description" content="久沒更新了 雖然這個Blog多半都在自己高潮不過久了還是會偶爾想要來講個屁話">
+<meta property="og:description" content="很多人想學程式 但是卻不知道從何學起雖然我自己也沒有非常精深研究但我可以帶著新手一點一滴認識新玩意兒">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-07-14T17:19:37.000Z">
-<meta property="article:modified_time" content="2020-07-14T18:04:37.967Z">
+<meta property="article:published_time" content="2020-09-23T03:40:58.000Z">
+<meta property="article:modified_time" content="2021-06-20T16:08:35.854Z">
 <meta property="article:author" content="Miyago">
-<meta property="article:tag" content="Diary">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Tutorial">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://miyago9267.github.io/2020/07/15/Diary-20200715/">
+<link rel="canonical" href="http://miyago9267.github.io/2020/09/23/Python-Fist-lesson/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>[Diary]20200715 | Miyago's Blog</title>
+  <title>[Python]<Fist lesson>Python的環境建置 | Miyago's Blog</title>
   
 
 
@@ -167,7 +168,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh_tw">
-    <link itemprop="mainEntityOfPage" href="http://miyago9267.github.io/2020/07/15/Diary-20200715/">
+    <link itemprop="mainEntityOfPage" href="http://miyago9267.github.io/2020/09/23/Python-Fist-lesson/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -180,7 +181,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [Diary]20200715
+          [Python]<Fist lesson>Python的環境建置
         </h1>
 
         <div class="post-meta">
@@ -189,17 +190,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-07-15 01:19:37 / Modified: 02:04:37" itemprop="dateCreated datePublished" datetime="2020-07-15T01:19:37+08:00">2020-07-15</time>
+              <time title="Created: 2020-09-23 11:40:58" itemprop="dateCreated datePublished" datetime="2020-09-23T11:40:58+08:00">2020-09-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-21 00:08:35" itemprop="dateModified" datetime="2021-06-21T00:08:35+08:00">2021-06-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Diary/" itemprop="url" rel="index"><span itemprop="name">Diary</span></a>
+                  <a href="/categories/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
                 </span>
             </span>
 
@@ -214,19 +221,42 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>久沒更新了 雖然這個Blog多半都在自己高潮<br>不過久了還是會偶爾想要來講個屁話</p>
+        <p>很多人想學程式 但是卻不知道從何學起<br>雖然我自己也沒有非常精深研究<br>但我可以帶著新手一點一滴認識新玩意兒</p>
 <a id="more"></a>
-<p>今天來聽個歌</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/f3MDGKw0wdg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-maimai的奶貓 大家應該都知道ㄅ
-最近中毒很深
 
-<h3 id="maimai"><a href="#maimai" class="headerlink" title="maimai"></a>maimai</h3><p>正如我放Oshama Scramble<br>最近我真的是被淺野影響 想到就去打個mai<br>雖然打才沒幾次 不過至少原本連下位的譜都不能過 現在可以了<br>很尷尬的是我卡在7.0-7.5之間<br>一個7.0太慢 7.5又太快的概念<br>再練啦 我奶貓紫譜也只能打87多<br>丟DX之後真的是簡單很多</p>
-<h3 id="網聚"><a href="#網聚" class="headerlink" title="網聚"></a>網聚</h3><p>上禮拜天跟淺野買了客運票跑去台中<br>去找千羽老師和造等人見面<br>一整個尷尬 還好我們都熟人<br>尷尬只有…額…整個早上?<br>原本想邀他們一起體驗mai<br>只是他們不怎麼感興趣的樣子</p>
-<p>下午吃完飯跑去安美<br>傳說中的安美就盤子的天堂<br>看到那個價錢我手都要斷了<br>虧ㄑㄩ他們還可以買的下手</p>
-<p>不過轉蛋就可以了啦<br>最後去安美附近的轉蛋店扭了不少顆<br>ㄜ…是他們不是我 我只有扭一顆<br>一個大型歪婆現場 各種抽不到自己婆<br>最後是抽到全出貨才休息<br>錢啊…再…再課一單…</p>
-<h3 id="FB"><a href="#FB" class="headerlink" title="FB"></a>FB</h3><p>不知怎地想到 拿小帳去找本來不喜歡我的朋友(?)聯絡<br>然後我自己講自己的 我的封鎖就被解封了<br>不過就我看不到他友限文的辦事來看<br>我應該還在被保持距離<br>也好啦 畢竟我給人家壞印象這麼久<br>要嘛也要觀察一下 也可能人家是加我回來看笑話的<br>不過都加回來了 幹嘛在意這麼多<br>別人會討厭我也一定有他的理由<br>至少我是不討厭他的<br>讓時間過去就好了</p>
-<h3 id="315568"><a href="#315568" class="headerlink" title="315568"></a>315568</h3><p>這隻貓不錯</p>
+<p>宮語出品 必是毒品<br>本篇將講述建置Python開發的環境和須知</p>
+<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><h3 id="WHY-Python"><a href="#WHY-Python" class="headerlink" title="WHY Python"></a>WHY Python</h3><p>現在是資訊爆炸的社會 人人都該學習如何寫程式<br>程式語言五花八門 選擇非常多樣<br>有C、Python、JS、Php甚至更多<br>而就入門而言 Python是個適合新手學習的語言</p>
+<p>Python是種直譯式語言 也就是寫一行就會執行一行<br>不用整個寫完再編譯執行<br>而且語法簡單又短 寫起來很快<br>也有非常多寫好的Function和Package<br>省去很多自己手刻的時間</p>
+<h3 id="HOW-Python"><a href="#HOW-Python" class="headerlink" title="HOW Python"></a>HOW Python</h3><p>既然要學習Python 那我們就該建立Python的開發環境</p>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>首先如果你是Windows系統下 推薦使用Python3.8版本<br>在<a href="https://www.python.org/" target="_blank" rel="noopener">Python官網</a>可以下載到最新版本<br><a href="https://www.microsoft.com/zh-tw/search/result.aspx?q=Python&form=MSHOME" target="_blank" rel="noopener">Microsoft Store</a>裡面也可以載到新版的</p>
+<h4 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h4><p>MacOS系統下內建就有安裝Python 需要更新的時候更新就好<br>如果沒有安裝的話 可以在Terminal中輸入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo brew install python</span><br></pre></td></tr></table></figure>
+<p>進行安裝</p>
+<h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><p>如果Linux類型的系統 通常內建安裝<br>可以藉由安裝套件安裝 打開Terminal輸入指令安裝<br>例如Ubuntu是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python3</span><br></pre></td></tr></table></figure>
+<style>
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+</style>
+<div class="alert alert-info part in-view" data-startline="50" data-endline="51" data-position="737" data-size="51" data-original-title="" title="">
+<p data-position="745" data-size="0"><span data-position="745" data-size="39">MacOS和Linux的User記得加上sudo才不會因為權限不足而吃到錯誤喔</span></p>
+</div>
+
+<p>安裝好後就可以獲得Python的開發環境<br>那就可以進行下一步啦    </p>
+<blockquote>
+<p>為了方便及永續性 本教學將使用Linux系統進行教學</p>
+</blockquote>
+<p>手上沒有Linux的朋友也可使用MacOS或是WSL進行操作<br>再不行的話就自行轉換成Windows下的操作喔</p>
+<p>那本篇就先講述如何建置環境<br>下一篇開始 會從整個Python的起頭開始講起</p>
 
     </div>
 
@@ -236,7 +266,8 @@ maimai的奶貓 大家應該都知道ㄅ
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Diary/" rel="tag"># Diary</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/Tutorial/" rel="tag"># Tutorial</a>
           </div>
 
         
@@ -245,13 +276,10 @@ maimai的奶貓 大家應該都知道ㄅ
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/06/12/Story-Autobiography/" rel="prev" title="[Story]The story of a poor boy(?)">
-      <i class="fa fa-chevron-left"></i> [Story]The story of a poor boy(?)
+    <a href="/2020/09/23/Diary-20200923/" rel="prev" title="[Diary]20200923">
+      <i class="fa fa-chevron-left"></i> [Diary]20200923
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/09/23/Diary-20200923/" rel="next" title="[Diary]20200923">
-      [Diary]20200923 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -311,7 +339,7 @@ maimai的奶貓 大家應該都知道ㄅ
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#maimai"><span class="nav-number">1.</span> <span class="nav-text">maimai</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B6%B2%E8%81%9A"><span class="nav-number">2.</span> <span class="nav-text">網聚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FB"><span class="nav-number">3.</span> <span class="nav-text">FB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#315568"><span class="nav-number">4.</span> <span class="nav-text">315568</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD"><span class="nav-number">1.</span> <span class="nav-text">前置作業</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WHY-Python"><span class="nav-number">1.1.</span> <span class="nav-text">WHY Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HOW-Python"><span class="nav-number">1.2.</span> <span class="nav-text">HOW Python</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows"><span class="nav-number">1.2.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MacOS"><span class="nav-number">1.2.2.</span> <span class="nav-text">MacOS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux"><span class="nav-number">1.2.3.</span> <span class="nav-text">Linux</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -454,7 +482,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'miyago9267.github.io',
       owner       : 'miyago9267',
       admin       : ['miyago9267'],
-      id          : '5bc4576fed69733d9296caa4307ffec5',
+      id          : 'f8cad6f97ce2ee18246a0cad445d4fe4',
         language: 'zh_TW',
       distractionFreeMode: true
     });

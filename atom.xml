@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://miyago9267.github.io/"/>
-  <updated>2020-07-14T18:04:37.967Z</updated>
+  <updated>2021-06-20T16:08:35.854Z</updated>
   <id>http://miyago9267.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Python]&lt;Fist lesson&gt;Python的環境建置</title>
+    <link href="http://miyago9267.github.io/2020/09/23/Python-Fist-lesson/"/>
+    <id>http://miyago9267.github.io/2020/09/23/Python-Fist-lesson/</id>
+    <published>2020-09-23T03:40:58.000Z</published>
+    <updated>2021-06-20T16:08:35.854Z</updated>
+    
+    <content type="html"><![CDATA[<p>很多人想學程式 但是卻不知道從何學起<br>雖然我自己也沒有非常精深研究<br>但我可以帶著新手一點一滴認識新玩意兒</p><a id="more"></a><p>宮語出品 必是毒品<br>本篇將講述建置Python開發的環境和須知</p><h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><h3 id="WHY-Python"><a href="#WHY-Python" class="headerlink" title="WHY Python"></a>WHY Python</h3><p>現在是資訊爆炸的社會 人人都該學習如何寫程式<br>程式語言五花八門 選擇非常多樣<br>有C、Python、JS、Php甚至更多<br>而就入門而言 Python是個適合新手學習的語言</p><p>Python是種直譯式語言 也就是寫一行就會執行一行<br>不用整個寫完再編譯執行<br>而且語法簡單又短 寫起來很快<br>也有非常多寫好的Function和Package<br>省去很多自己手刻的時間</p><h3 id="HOW-Python"><a href="#HOW-Python" class="headerlink" title="HOW Python"></a>HOW Python</h3><p>既然要學習Python 那我們就該建立Python的開發環境</p><h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>首先如果你是Windows系統下 推薦使用Python3.8版本<br>在<a href="https://www.python.org/" target="_blank" rel="noopener">Python官網</a>可以下載到最新版本<br><a href="https://www.microsoft.com/zh-tw/search/result.aspx?q=Python&form=MSHOME" target="_blank" rel="noopener">Microsoft Store</a>裡面也可以載到新版的</p><h4 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h4><p>MacOS系統下內建就有安裝Python 需要更新的時候更新就好<br>如果沒有安裝的話 可以在Terminal中輸入</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo brew install python</span><br></pre></td></tr></table></figure><p>進行安裝</p><h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><p>如果Linux類型的系統 通常內建安裝<br>可以藉由安裝套件安裝 打開Terminal輸入指令安裝<br>例如Ubuntu是</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python3</span><br></pre></td></tr></table></figure><style>.alert-info {    color: #31708f;    background-color: #d9edf7;    border-color: #bce8f1;}.alert {    padding: 15px;    margin-bottom: 20px;    border: 1px solid transparent;    border-radius: 4px;}</style><div class="alert alert-info part in-view" data-startline="50" data-endline="51" data-position="737" data-size="51" data-original-title="" title=""><p data-position="745" data-size="0"><span data-position="745" data-size="39">MacOS和Linux的User記得加上sudo才不會因為權限不足而吃到錯誤喔</span></p></div><p>安裝好後就可以獲得Python的開發環境<br>那就可以進行下一步啦    </p><blockquote><p>為了方便及永續性 本教學將使用Linux系統進行教學</p></blockquote><p>手上沒有Linux的朋友也可使用MacOS或是WSL進行操作<br>再不行的話就自行轉換成Windows下的操作喔</p><p>那本篇就先講述如何建置環境<br>下一篇開始 會從整個Python的起頭開始講起</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;很多人想學程式 但是卻不知道從何學起&lt;br&gt;雖然我自己也沒有非常精深研究&lt;br&gt;但我可以帶著新手一點一滴認識新玩意兒&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Tutorial" scheme="http://miyago9267.github.io/categories/Tutorial/"/>
+    
+    
+      <category term="Python" scheme="http://miyago9267.github.io/tags/Python/"/>
+    
+      <category term="Tutorial" scheme="http://miyago9267.github.io/tags/Tutorial/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Diary]20200923</title>
+    <link href="http://miyago9267.github.io/2020/09/23/Diary-20200923/"/>
+    <id>http://miyago9267.github.io/2020/09/23/Diary-20200923/</id>
+    <published>2020-09-23T03:37:41.000Z</published>
+    <updated>2021-06-20T15:21:20.035Z</updated>
+    
+    <content type="html"><![CDATA[<p>久違的廢話 來抱怨一下FB</p><a id="more"></a><p>操你媽組刻薄 就這樣</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;久違的廢話 來抱怨一下FB&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Diary" scheme="http://miyago9267.github.io/categories/Diary/"/>
+    
+    
+      <category term="Diary" scheme="http://miyago9267.github.io/tags/Diary/"/>
+    
+  </entry>
   
   <entry>
     <title>[Diary]20200715</title>
