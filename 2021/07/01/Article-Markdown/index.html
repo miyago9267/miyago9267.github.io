@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo_16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"miyago9267.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="筆者有一些資工相關的背景不過儘管如此 就算架了一個blog也不是真的每次都很閒真的去寫一個新的網頁來增加新內容我個人是使用hexo模板架blog而其中在新增新的貼文時不用真的用html去刻一個網頁而是使用一個格式去編寫再讓模板幫我渲染成我要的樣子這次不是要講模板渲染的原理之類的而是要著重講解那個格式這個 就是我們這次要講的 - Markdown格式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[科普]偷懶的文件 - Markdown格式">
+<meta property="og:url" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/">
+<meta property="og:site_name" content="Miyago&#39;s Blog">
+<meta property="og:description" content="筆者有一些資工相關的背景不過儘管如此 就算架了一個blog也不是真的每次都很閒真的去寫一個新的網頁來增加新內容我個人是使用hexo模板架blog而其中在新增新的貼文時不用真的用html去刻一個網頁而是使用一個格式去編寫再讓模板幫我渲染成我要的樣子這次不是要講模板渲染的原理之類的而是要著重講解那個格式這個 就是我們這次要講的 - Markdown格式">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-f9e28262.png">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-27802bbc.png">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-cd50f478.png">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-eec28ff7.png">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-8b063e5a.png">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/90477192_p0_master1200.jpg">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-08d71362.png">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-54a5fa0f.png">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-17360d44.png">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-e6393453.png">
+<meta property="og:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-de4753d0.png">
+<meta property="article:published_time" content="2021-07-01T05:49:51.000Z">
+<meta property="article:modified_time" content="2021-07-01T11:16:26.830Z">
+<meta property="article:author" content="Miyago">
+<meta property="article:tag" content="Tutorial">
+<meta property="article:tag" content="Markdown">
+<meta property="article:tag" content="Popular Topic">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://miyago9267.github.io/2021/07/01/Article-Markdown/images/Article-Markdown-f9e28262.png">
+
+<link rel="canonical" href="http://miyago9267.github.io/2021/07/01/Article-Markdown/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh_tw'
+  };
+</script>
+
+  <title>[科普]偷懶的文件 - Markdown格式 | Miyago's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Miyago's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Miyago's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh_tw">
+    <link itemprop="mainEntityOfPage" href="http://miyago9267.github.io/2021/07/01/Article-Markdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Miyago">
+      <meta itemprop="description" content="Just a student who still learning">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Miyago's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [科普]偷懶的文件 - Markdown格式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-07-01 13:49:51 / Modified: 19:16:26" itemprop="dateCreated datePublished" datetime="2021-07-01T13:49:51+08:00">2021-07-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tutorial/" itemprop="url" rel="index"><span itemprop="name">Tutorial</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>筆者有一些資工相關的背景<br>不過儘管如此 就算架了一個blog<br>也不是真的每次都很閒真的去寫一個新的網頁來增加新內容<br>我個人是使用hexo模板架blog<br>而其中在新增新的貼文時<br>不用真的用html去刻一個網頁<br>而是使用一個格式去編寫<br>再讓模板幫我渲染成我要的樣子<br>這次不是要講模板渲染的原理之類的<br>而是要著重講解那個格式<br>這個 就是我們這次要講的 - Markdown格式</p>
+<span id="more"></span>
+
+<style>
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+</style>
+
+<h2 id="Markdown格式簡介"><a href="#Markdown格式簡介" class="headerlink" title="Markdown格式簡介"></a>Markdown格式簡介</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/QkuauwgMb1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<center>Arcaea和TacoC合作的新歌 初見960 不覺得真的有10.7</center>
+
+<h3 id="本文預設前提"><a href="#本文預設前提" class="headerlink" title="本文預設前提"></a>本文預設前提</h3><ul>
+<li>會用電腦</li>
+<li>會打字</li>
+<li>本篇好像都沒什麼專業的東西(躲</li>
+<li>(非必須)建議略懂Html會比較容易理解</li>
+</ul>
+<h3 id="什麼是Markdown呢"><a href="#什麼是Markdown呢" class="headerlink" title="什麼是Markdown呢"></a>什麼是Markdown呢</h3><p>Markdown格式是目前非常普遍用來撰寫文檔的語言<br>原本就是設計來讓使用者專注於文字上<br>一開始就定位在一個可以用”純文字”搞定的編寫格式<br>不需使用Word或其他的額外工具進行編輯</p>
+<p>例如Word 我們可以透過上面那排工具列<br>去人性化的設定我們要的格式和編排<br>例如<strong>標題、列表、粗體、斜體</strong><br><img src="images/Article-Markdown-f9e28262.png" alt=""></p>
+<p>只是這樣有個缺點<br><mark>就是Word文件一定要開啟Word去瀏覽和編輯</mark><br>一旦沒有安裝Word文件就等於沒用了<br>可是Markdown格式不是<br>只是要存成.md格式即可當成普通的文字檔編輯</p>
+<p>這樣一來 使用者只要透過一些<strong>簡單的符號和格式</strong><br>就可以部分取代原本圖形化介面弄出來的文件<br>進而達成我們要的顯示效果</p>
+<img alt="Article-Markdown-27802bbc.png" src="images/Article-Markdown-27802bbc.png" width="" height="" style="zoom:50%">
+
+<h3 id="如何使用Markdown"><a href="#如何使用Markdown" class="headerlink" title="如何使用Markdown"></a>如何使用Markdown</h3><p>Markdown格式有個很基本的概念<br><mark>就是Markdown格式是可以對應HTML的</mark><br>這是一個非常重要的原則<br>也就是說Markdown這鬼東西是可以套用Html的概念的<br>甚至可以直接在裡面寫Html是沒問題的喔</p>
+<h4 id="區塊"><a href="#區塊" class="headerlink" title="區塊"></a><font color=#FF9F3F>區塊</font></h4><p>這不是一個語法 而是一個概念<br>這個方式會讓你的文字內容變成一塊一塊的<br>區塊內都能夠<strong>共用同一個格式設定</strong><br><strong>標題、引用或是清單</strong>啊 都屬於這個種類</p>
+<div class="alert alert-info part in-view" data-startline="50" data-endline="51" data-position="737" data-size="51" data-original-title="" title="">
+<p data-position="745" data-size="0"><span data-position="745" data-size="39">注意 : 區塊是可以疊加使用的<br>例如引用裡面可以再包標題</span></p>
+</div>
+
+<h4 id="標題"><a href="#標題" class="headerlink" title="標題"></a><font color=#FF9F3F>標題</font></h4><p>標題 顧名思義就是標題<br>他能讓你一目了然這一個part是在幹嘛的<br>總共分為6個等級 對應成html為&lt;h1&gt;~&lt;h6&gt;<br>使用方式也很簡單 就是塞一堆”#”號<br>數量越多等級越高 反之就越低 最多6個</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 標題1</span></span><br><span class="line"><span class="section">## 標題2</span></span><br><span class="line">......</span><br><span class="line"><span class="section">###### 標題6</span></span><br></pre></td></tr></table></figure>
+
+<center>呈現出來的效果(以Hackmd作為示範)</center>
+
+<img alt="Article-Markdown-cd50f478.png" src="images/Article-Markdown-cd50f478.png" width="" height="" style="zoom:75%">
+
+<h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a><font color=#FF9F3F>段落</font></h4><p>段落就是給你放內文的地方 全名叫文字段落<br>當你沒有加上任何標籤和符號時<br>那個區塊的文字就自己會是文字段落</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 標題</span></span><br><span class="line">這裡是文字段落</span><br></pre></td></tr></table></figure>
+
+<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a><font color=#FF9F3F>引用</font></h4><p>引用就像是回復訊息<br>常用在於想要補充或強調某一段內容<br>就像要回復那段訊息繼續說明一樣</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 標題</span></span><br><span class="line">這裡是文字段落</span><br><span class="line"><span class="quote">&gt; 然後補充</span></span><br></pre></td></tr></table></figure>
+
+<center>呈現出來的效果</center>
+
+<img alt="Article-Markdown-eec28ff7.png" src="images/Article-Markdown-eec28ff7.png" width="" height="" >
+
+<blockquote>
+<p>這是在blog上實際看到引用的效果</p>
+</blockquote>
+<div class="alert alert-info part in-view" data-startline="50" data-endline="51" data-position="737" data-size="51" data-original-title="" title="">
+<p data-position="745" data-size="0"><span data-position="745" data-size="39">注意 : 部分Markdown環境不能在引用再額外包著區塊<br>只能單獨使用引用</span></p>
+</div>
+
+<h4 id="清單"><a href="#清單" class="headerlink" title="清單"></a><font color=#FF9F3F>清單</font></h4><p>清單分為一般列表及包含數字符號的列表<br>都可以包含多個層級<br>只要加上一個縮排或兩個空格就可以新增一個層級</p>
+<p>符號可以用這幾種<br>而只要縮排即可建立子清單</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">*</span> 這是清單</span><br><span class="line"><span class="bullet">+</span> 你也是清單</span><br><span class="line"><span class="bullet">-</span> 你還是清單</span><br><span class="line"><span class="bullet">  -</span> 這是子清單</span><br></pre></td></tr></table></figure>
+
+<p>數字也是一樣的 值得注意的是<br>數字清單並不需要按照順序</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 清單1</span><br><span class="line"><span class="bullet">2.</span> 清單2</span><br><span class="line"><span class="bullet">3.</span> 清單3</span><br></pre></td></tr></table></figure>
+
+<p>實際打在Blog上長這樣</p>
+<ol>
+<li>哈哈一號</li>
+<li>哈哈二號</li>
+<li>哈哈三號</li>
+</ol>
+<h4 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a><font color=#FF9F3F>程式碼</font></h4><p>假如是像筆者一樣的程式學習者<br>或者是專業的開發人員<br>用到程式碼可以說是家常便飯<br>至於做為一個許多開發者撰寫文件的工具<br>Markdown格式能夠插入程式碼說實在也挺合理的</p>
+<img alt="Article-Markdown-8b063e5a.png" src="images/Article-Markdown-8b063e5a.png" width="" height="" style="zoom:80%">
+
+<p>呈現出來的結果長這樣</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello Motherfucker&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a><font color=#FF9F3F>表格</font></h4><p>Markdown格式也有提供表格功能<br>雖然筆者覺得有點不方便使用<br>因此建議可以和html的<table>一起混用</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">| thead 1 | thrad 2 | thread 3 |</span><br><span class="line">|---------|---------|----------|</span><br><span class="line">| td      | td      | td       |</span><br></pre></td></tr></table></figure>
+
+<p>使用起來像這樣</p>
+<table>
+<thead>
+<tr>
+<th>thead 1</th>
+<th>thrad 2</th>
+<th>thread 3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>td</td>
+<td>td</td>
+<td>td</td>
+</tr>
+</tbody></table>
+<h4 id="行內元素"><a href="#行內元素" class="headerlink" title="行內元素"></a><font color=#FF9F3F>行內元素</font></h4><p>不同於區塊 套用這個格式可以直接插於各個區塊內<br>例如 : <strong>強調、斜體、連結、圖片</strong>等等</p>
+<h4 id="斜體"><a href="#斜體" class="headerlink" title="斜體"></a><font color=#FF9F3F>斜體</font></h4><p>顧名思義 就是<em>斜體字</em><br>使用很簡單 在要斜體的字句前後”各”加上一個*</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*我想要讓他變斜*</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="強調"><a href="#強調" class="headerlink" title="強調"></a><font color=#FF9F3F>強調</font></h4><p>實際上就是<strong>粗體字</strong><br>使用很簡單 在要斜體的字句前後”各”加上兩個*</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**我想要讓他變斜**</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="行內程式碼"><a href="#行內程式碼" class="headerlink" title="行內程式碼"></a><font color=#FF9F3F>行內程式碼</font></h4><p>跟剛才的程式碼一樣<br>只是這次不會一次佔一個區塊了<br>可以直接插入在字句當中</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`&lt;h1&gt;`</span>在Html中是第一號的標題標籤</span><br></pre></td></tr></table></figure>
+<p>實際使用長這樣</p>
+<p><code>&lt;h1&gt;</code>在Html中是第一號的標題標籤</p>
+<p>如果不這個做的話 &lt;h1&gt;不只不會被強調<br>甚至會被瀏覽器渲染為html標籤<br>被判斷進去 就會出錯</p>
+<h4 id="連結和圖片"><a href="#連結和圖片" class="headerlink" title="連結和圖片"></a><font color=#FF9F3F>連結和圖片</font></h4><p>連結和圖片使用有點近似<br>差別在於開頭有沒有一個”!”</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//這是圖片</span><br><span class="line">![](圖片網址)</span><br><span class="line"></span><br><span class="line">//這是超連結</span><br><span class="line">![<span class="string">顯示的內容</span>](<span class="link">連結網址</span>)</span><br></pre></td></tr></table></figure>
+
+<p>實際使用的話 圖片會像這樣<br><img alt="Article-Markdown-8b063e5a.png" src="images/90477192_p0_master1200.jpg" width="" height="" style="zoom:20%"><br>連結的話可以<a target="_blank" rel="noopener" href="https://youtu.be/dQw4w9WgXcQ">像這樣</a><br>“像這樣”就是我們要顯示的內容 點了可以進到連結的網址</p>
+<h4 id="當我不想使用格式卻跑出來了"><a href="#當我不想使用格式卻跑出來了" class="headerlink" title="當我不想使用格式卻跑出來了"></a><font color=#FF9F3F>當我不想使用格式卻跑出來了</font></h4><p>Markdown格式使用多了<br>有人可能會發現<br>咦? 我在打某些內容時 會需要使用一些符號<br>但這些符號卻自己被判定成Markdown格式了<br>這時候怎麼辦呢</p>
+<p>其實挺簡單的 不管是寫html甚至其他程式語言都有這個問題<br>這時候我們會需要使用和<strong>跳脫字元</strong>一樣的做法<br><mark>在要打的符號和標籤前面加上反斜線\</mark></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\<span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span>是在Html中是第一號的標題標籤</span><br><span class="line">\#的英文叫做hashtag</span><br></pre></td></tr></table></figure>
+
+<p>顯示出來就會原封不動的讓他顯示出來啦<br>結果如下:<br>&lt;h1&gt;是在Html中是第一號的標題標籤<br>#的英文叫做hashtag</p>
+<h3 id="常見的應用"><a href="#常見的應用" class="headerlink" title="常見的應用"></a>常見的應用</h3><p>目前會比較常看到Markdown格式的地方<br>大部分會是比較偏向跟程式語言相關的文檔<br>因為程式語言也是使用純文字去編寫<br>使用Markdown格式特性是一致的</p>
+<p>例如 平常我們在逛<a target="_blank" rel="noopener" href="https://github.com">github</a>時<br>通常會看到一個使用markdown的readme.md檔案<br><strong>作為該專案的介紹或文檔</strong></p>
+<img alt="Article-Markdown-08d71362.png" src="images/Article-Markdown-08d71362.png" width="" height="" style="zoom:60%">
+<center>例如這個dotfile就有一個readme.md告訴你怎麼用</center>
+
+<p>當然 不只在程式開發上面<br>Markdown可以應用在很多日常會用到的內容上<br>例如<strong>筆記工具、文字通訊、Blog</strong>等等<br>都有不少程式已經跟進支援Markdown格式的使用<br>增進使用的效率和方便性</p>
+<p>例如 <a target="_blank" rel="noopener" href="https://hackmd.io">Hackmd</a>是一個方便的<strong>網頁</strong>筆記工具<br>他的編寫就是預設使用Markdown格式完成的<br>可以很方便的排版和設計自己的文件<br>這個網站還有一點很方便 他能自動提示你你想要完成的格式<br>也可以幫你分類筆記、做成簡報模式<br>更能設定編輯權限 開放給朋友一同編輯或觀賞<br>是筆者個人很喜歡的一款筆記工具<br><del>(趁機安利一波)</del></p>
+<img alt="Article-Markdown-54a5fa0f.png" src="images/Article-Markdown-54a5fa0f.png" width="" height="" style="zoom:50%">
+
+<p>筆者現在使用的<a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/">Hexo模板</a><br>就是一款讓你只需要編寫Markdown就可以產生blog的工具<br>讓你不需要真的去刻Html就可以很方便的擁有自己的網站</p>
+<p>除了上述本來就是寫Markdown的程式和網站外<br>像我們常用的FB、Line以及discord也都有部分支援Markdown格式</p>
+<p>Line就可以使用Markdown格式讓訊息不只是一行一行單調的文字<br>能夠用來傳遞不同的格式甚至是程式碼<br><img alt="Article-Markdown-17360d44.png" src="images/Article-Markdown-17360d44.png" width="" height="" style="zoom:50%"></p>
+<center>本功能目前只有電腦版有</center>
+
+<p>FB也能夠在部分功能使用Markdown格式<br>例如FB底下的messenger就能夠使用這個功能<br><img alt="Article-Markdown-e6393453.png" src="images/Article-Markdown-e6393453.png" width="" height="" style="zoom:45%"></p>
+<center>注意:本功能很爛的只有在網頁版messenger能夠使用<br>無論是FB主網頁或者應用程式和手機全部都不行</center>
+
+<p>或者在FB社團也允許用markdown格式去進行發文</p>
+<p>當中筆者覺得Markdown文字訊息功能最完善的程式<br>就是玩遊戲時常使用的通訊軟體 - <strong>discord</strong><br>同樣也能很能傳送markdown格式文字<br>更方便的是他會有預覽 讓你知道自己打了三小</p>
+<img alt="Article-Markdown-de4753d0.png" src="images/Article-Markdown-de4753d0.png" width="" height="" style="zoom:50%">
+<center>而且他也會自動提示 超讚的啦</center>
+
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>這篇只簡單介紹了一下Markdown和其語法<br>其實還有更多關於md的使用技巧<br>不過本篇就不多做說明<br>除了不一定每個人都會使用到<br><del>再者就是筆者其實也不一定會用</del><br>總之 有興趣再自己多加研究吧</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a target="_blank" rel="noopener" href="https://markdown.tw">Markdown語法說明</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tutorial/" rel="tag"># Tutorial</a>
+              <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+              <a href="/tags/Popular-Topic/" rel="tag"># Popular Topic</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/28/Tutorial-Linux/" rel="prev" title="[Tutorial] Linux 基本教學">
+      <i class="fa fa-chevron-left"></i> [Tutorial] Linux 基本教學
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown%E6%A0%BC%E5%BC%8F%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">Markdown格式簡介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E9%A0%90%E8%A8%AD%E5%89%8D%E6%8F%90"><span class="nav-number">1.1.</span> <span class="nav-text">本文預設前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AFMarkdown%E5%91%A2"><span class="nav-number">1.2.</span> <span class="nav-text">什麼是Markdown呢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Markdown"><span class="nav-number">1.3.</span> <span class="nav-text">如何使用Markdown</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%80%E5%A1%8A"><span class="nav-number">1.3.1.</span> <span class="nav-text">區塊</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%99%E9%A1%8C"><span class="nav-number">1.3.2.</span> <span class="nav-text">標題</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD"><span class="nav-number">1.3.3.</span> <span class="nav-text">段落</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">1.3.4.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%85%E5%96%AE"><span class="nav-number">1.3.5.</span> <span class="nav-text">清單</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">1.3.6.</span> <span class="nav-text">程式碼</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">1.3.7.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%85%A7%E5%85%83%E7%B4%A0"><span class="nav-number">1.3.8.</span> <span class="nav-text">行內元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%9C%E9%AB%94"><span class="nav-number">1.3.9.</span> <span class="nav-text">斜體</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%B7%E8%AA%BF"><span class="nav-number">1.3.10.</span> <span class="nav-text">強調</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%85%A7%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">1.3.11.</span> <span class="nav-text">行內程式碼</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%A3%E7%B5%90%E5%92%8C%E5%9C%96%E7%89%87"><span class="nav-number">1.3.12.</span> <span class="nav-text">連結和圖片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%95%B6%E6%88%91%E4%B8%8D%E6%83%B3%E4%BD%BF%E7%94%A8%E6%A0%BC%E5%BC%8F%E5%8D%BB%E8%B7%91%E5%87%BA%E4%BE%86%E4%BA%86"><span class="nav-number">1.3.13.</span> <span class="nav-text">當我不想使用格式卻跑出來了</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E7%9A%84%E6%87%89%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">常見的應用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">2.</span> <span class="nav-text">結語</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Miyago"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Miyago</p>
+  <div class="site-description" itemprop="description">Just a student who still learning</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/miyago9267" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;miyago9267" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/miyago_9267" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;miyago_9267" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100036471972702" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100036471972702" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/miyago_mizugen1124" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;miyago_mizugen1124" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fas fa-angle-right"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">miyago9267</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '5b5018b73fbd142ba347',
+      clientSecret: 'ebb118aea22dadd9b3c1311a97eb42000e3275d1',
+      repo        : 'miyago9267.github.io',
+      owner       : 'miyago9267',
+      admin       : ['miyago9267'],
+      id          : 'ac1db04ffae572b3b4446055e4b6e458',
+        language: 'zh_TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
